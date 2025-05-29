@@ -7,7 +7,7 @@ import lottieFile from '../../../assets/lottie/study.json';
 import AnimationLottie from "../../helper/animation-lottie";
 import dynamic from "next/dynamic";
 
-const GlowCard = dynamic(() => import('../../helper/glow-card'), {ssr: false})
+const NOSSRGlowCard = dynamic(() => import('../../helper/glow-card'), { ssr: false })
 
 function Education() {
   return (
@@ -47,7 +47,7 @@ function Education() {
             <div className="flex flex-col gap-6 w-full">
               {
                 educations.map(education => (
-                  <GlowCard key={education.id} identifier={`education-${education.id}`}>
+                  <NOSSRGlowCard key={education.id} identifier={`education-${education.id}`}>
                     <div className="p-3 relative text-white">
                       <Image
                         src="/blur-23.svg"
@@ -73,7 +73,7 @@ function Education() {
                         </div>
                       </div>
                     </div>
-                  </GlowCard>
+                  </NOSSRGlowCard>
                 ))
               }
             </div>
